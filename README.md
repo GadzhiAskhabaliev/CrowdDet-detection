@@ -1,3 +1,32 @@
+# CrowdDet-detection
+
+**Personal fork** of the official PyTorch [CrowdDet](https://github.com/xg-chu/CrowdDet) (CVPR 2020: *Detection in Crowded Scenes: One Proposal, Multiple Predictions*). Upstream code is unchanged except where noted; this repo exists to **run CrowdHuman benchmarks** and to **export predictions into the same COCO-style evaluation path** used alongside YOLO / MMDet models in [real-time-people-detection-and-tracking-on-edge](https://github.com/GadzhiAskhabaliev/real-time-people-detection-and-tracking-on-edge).
+
+**Canonical upstream:** [https://github.com/xg-chu/CrowdDet](https://github.com/xg-chu/CrowdDet)  
+**This fork on GitHub:** [https://github.com/GadzhiAskhabaliev/CrowdDet-detection](https://github.com/GadzhiAskhabaliev/CrowdDet-detection)
+
+## What is added here
+
+| Path | Role |
+|------|------|
+| [`scripts/eval_coco_predictions.py`](scripts/eval_coco_predictions.py) | Single entrypoint for **pycocotools** bbox eval: COCO GT JSON + list of detections (`image_id`, `category_id`, `bbox` xywh, `score`) → AP25 / AP50 / AP75 / AP50-95, COCO AR, optional greedy P/R/FDR. Matches the evaluator used in the benchmark study. |
+| [`scripts/convert_crowddet_to_coco_dt.py`](scripts/convert_crowddet_to_coco_dt.py) | Converts CrowdDet `tools/test.py` output (**JSONL**: one JSON record per line with `ID`, `dtboxes`) into the COCO detection list expected by `eval_coco_predictions.py`. Handles `Extra data` vs full-file JSON correctly. |
+| [`docs/UNIFIED_EVAL.md`](docs/UNIFIED_EVAL.md) | End-to-end protocol: native `test.py`, building / using `val.json`, convert + eval, troubleshooting. |
+
+**Not included:** MMDetection; CrowdDet remains a standalone PyTorch codebase. For comparison with MMDet-style detectors, both stacks should emit the same COCO DT format and use the same `val.json` ([bridge doc](https://github.com/GadzhiAskhabaliev/real-time-people-detection-and-tracking-on-edge/blob/main/docs/group_b_remote_mmdet_bridge.md)).
+
+## Quick start
+
+1. **Environment & data** — follow the original **Run** / Docker section below; set CrowdHuman paths in `model/<arch>/config.py` (see upstream).
+2. **Native CrowdHuman metrics** — `cd tools && python3 test.py -md rcnn_emd_refine -r <epoch> -d <gpu>`.
+3. **Unified COCOeval** — see [`docs/UNIFIED_EVAL.md`](docs/UNIFIED_EVAL.md).
+
+## Citation (original work)
+
+If you use CrowdDet, cite the authors’ paper (see upstream README block below). This fork does not change the scientific claim; it only adds evaluation helpers.
+
+---
+
 # Detection in Crowded Scenes: One Proposal, Multiple Predictions
 
 This is the pytorch implementation of our paper "[Detection in Crowded Scenes: One Proposal, Multiple Predictions](https://openaccess.thecvf.com/content_CVPR_2020/html/Chu_Detection_in_Crowded_Scenes_One_Proposal_Multiple_Predictions_CVPR_2020_paper.html)", https://arxiv.org/abs/2003.09163, published in CVPR 2020.
