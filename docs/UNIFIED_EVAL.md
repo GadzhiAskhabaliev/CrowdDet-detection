@@ -1,6 +1,6 @@
 # Unified COCO-style evaluation (CrowdHuman val)
 
-Unified evaluation helpers in this repo are **additional tooling** on top of CrowdDet. **Always cite the original CrowdDet paper and upstream code** when you use weights, architecture, or training code from this tree; see the main [README](../README.md#attribution-and-citation).
+Unified evaluation helpers in this repo are **additional tooling** on top of CrowdDet. **Always cite the original CrowdDet paper and upstream code** when you use weights, architecture, or training code from this tree; see [Attribution and citation](https://github.com/GadzhiAskhabaliev/CrowdDet-detection#attribution-and-citation) and the BibTeX under [Citation](https://github.com/GadzhiAskhabaliev/CrowdDet-detection#citation) in the main README.
 
 
 Native CrowdHuman numbers from `tools/test.py` (AP / MR / JI) stay unchanged; unified AP is **not** identical to that protocol.
