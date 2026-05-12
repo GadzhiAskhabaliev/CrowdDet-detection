@@ -21,9 +21,11 @@
 2. **Native CrowdHuman metrics** — `cd tools && python3 test.py -md rcnn_emd_refine -r <epoch> -d <gpu>`.
 3. **Unified COCOeval** — see [`docs/UNIFIED_EVAL.md`](docs/UNIFIED_EVAL.md).
 
-## Citation (original work)
+## Attribution and citation
 
-If you use CrowdDet, cite the authors’ paper (see upstream README block below). This fork does not change the scientific claim; it only adds evaluation helpers.
+If you use **this codebase or its weights**, you must **cite the original CrowdDet work** and credit the upstream implementation, as the authors request. Use the **BibTeX block in the [Citation](#citation) section below** (Chu et al., CVPR 2020). In papers or reports, also name the repository: **Xuangeng Chu et al., CrowdDet** — [https://github.com/xg-chu/CrowdDet](https://github.com/xg-chu/CrowdDet).
+
+This fork (**CrowdDet-detection**) only adds evaluation helpers; it is **not** a separate method. If you publish numbers produced here, cite CrowdDet (and the **CrowdHuman** dataset per [crowdhuman.org](https://www.crowdhuman.org/) terms) and, if relevant, link this fork for reproducibility of the eval pipeline.
 
 ---
 

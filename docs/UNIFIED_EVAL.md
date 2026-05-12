@@ -1,6 +1,7 @@
 # Unified COCO-style evaluation (CrowdHuman val)
 
-This fork adds tooling so CrowdDet dumps can be scored with the same **pycocotools `COCOeval`** pipeline used in the pedestrian benchmark repo ([real-time-people-detection-and-tracking-on-edge](https://github.com/GadzhiAskhabaliev/real-time-people-detection-and-tracking-on-edge)): `scripts/eval_coco_predictions.py`, metric keys, and `--strict` image-id checks ([unified COCOeval notes](https://github.com/GadzhiAskhabaliev/real-time-people-detection-and-tracking-on-edge/blob/main/docs/benchmark_unified_cocoeval.md), [remote MMDet / CrowdDet bridge](https://github.com/GadzhiAskhabaliev/real-time-people-detection-and-tracking-on-edge/blob/main/docs/group_b_remote_mmdet_bridge.md)).
+Unified evaluation helpers in this repo are **additional tooling** on top of CrowdDet. **Always cite the original CrowdDet paper and upstream code** when you use weights, architecture, or training code from this tree; see the main [README](../README.md#attribution-and-citation).
+
 
 Native CrowdHuman numbers from `tools/test.py` (AP / MR / JI) stay unchanged; unified AP is **not** identical to that protocol.
 
