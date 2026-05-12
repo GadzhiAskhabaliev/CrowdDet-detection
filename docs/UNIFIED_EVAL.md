@@ -75,3 +75,7 @@ Optional: merge `patch.json` into a benchmark run via `bench_runner.py --merge-j
 - Git commit, model dir, `-r` epoch, `config.py` thresholds (`pred_cls_threshold`, NMS).
 - Absolute path to **`val.json`** used for convert + eval.
 - `--score-thr` passed to the converter (if non-zero).
+
+## Committed example run
+
+A snapshot of unified metrics (RCNN EMD Refine, epoch 30) is checked in as [`data/CrowdHuman/crowddet_unified_metrics_epoch30.json`](../data/CrowdHuman/crowddet_unified_metrics_epoch30.json); see [`data/CrowdHuman/README.md`](../data/CrowdHuman/README.md) for how it was produced.

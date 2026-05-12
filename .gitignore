@@ -5,6 +5,8 @@
 
 **/*.out
 **/*.json
+# Keep committed unified-eval snapshots (see data/CrowdHuman/README.md)
+!data/CrowdHuman/crowddet_unified_metrics_epoch30.json
 **/*.pkl
 **/*.pth
 **/*.log
